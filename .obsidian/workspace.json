@@ -1,0 +1,245 @@
+{
+  "main": {
+    "id": "82cb924bcc66757b",
+    "type": "split",
+    "children": [
+      {
+        "id": "0f89e796b73df96a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "699bd67a74e16386",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CLAUDE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CLAUDE"
+            }
+          }
+        ]
+      },
+      {
+        "id": "f1c3c51e97a1081e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4b7fb312ff7e95a9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "wiki/strain.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "strain"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "29cd9e0293f3312a",
+    "type": "split",
+    "children": [
+      {
+        "id": "8e105aaf7e87d8f0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "03fde11776e5e9fb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "0a78889bffbddc70",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "e2aa29319f2fa329",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4eda12587661d8fa",
+    "type": "split",
+    "children": [
+      {
+        "id": "bdded6997d916f45",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8d38a20bffc946cd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "wiki/strain.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for strain"
+            }
+          },
+          {
+            "id": "3ea63ddd8aabf674",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "wiki/strain.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from strain"
+            }
+          },
+          {
+            "id": "7b39f9ae1aef9f90",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "41a6d2edcf77284e",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "fee142ae3351e002",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "wiki/strain.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of strain"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "4b7fb312ff7e95a9",
+  "lastOpenFiles": [
+    "Machine_Learning.md",
+    "wiki/log.md.tmp.165893.1776712357708",
+    "wiki/index.md.tmp.165893.1776712348688",
+    "wiki/index.md.tmp.165893.1776712342975",
+    "wiki/landau-chap2.md.tmp.165893.1776712337084",
+    "wiki/yarn-simulation.md.tmp.165893.1776712332902",
+    "wiki/yarn-simulation.md.tmp.165893.1776712329047",
+    "wiki/yarn-simulation.md.tmp.165893.1776712322981",
+    "wiki/kirchhoff-rod.md",
+    "wiki/kirchhoff-rod.md.tmp.165893.1776712316697",
+    "wiki/coleman-1993.md",
+    "wiki/coleman-1993.md.tmp.165893.1776712286426",
+    "raw/Nonlinear_Problems_of_Elasticity.pdf",
+    "wiki/index.md",
+    "wiki/ding-2023.md",
+    "wiki/landau-chap2.md",
+    "wiki/witten-2007.md",
+    "wiki/kaldor-2008.md",
+    "wiki/yarn-contact.md",
+    "wiki/grandgeorge-2021.md",
+    "wiki/work-hardening.md",
+    "wiki/hookes-law.md",
+    "wiki/likharev-chap7.md",
+    "raw/Hooke_law.md",
+    "raw/Work_hardening.md",
+    "wiki/poincloux-prx-2018.md",
+    "wiki/stress-strain-curve.md",
+    "wiki/strain.md",
+    "wiki/constitutive-model.md",
+    "wiki/physics-world-2019.md",
+    "wiki/jamshaid-mishra-2024.md",
+    "wiki/cornelissen-2009.md",
+    "wiki/log.md",
+    "CLAUDE.md",
+    "wiki/dresselhaus-2025.md",
+    "wiki/dimitriyev-notes-2019.md"
+  ]
+}
