@@ -234,6 +234,18 @@ No new sources ingested. Lint audit found and fixed 13 issues across 19 files.
 
 ---
 
+## 2026-04-30 — strain.md tutorial revised
+
+No new sources ingested.
+
+**Tutorial updated** (1):
+
+| File | Changes |
+|---|---|
+| `tutorials/strain.md` | Removed true strain (logarithmic strain) section and table row; expanded strain tensor index explanation with 3×3 matrix, meaning of each $s_{jj'}$ component, and why symmetry excludes rigid rotation |
+
+---
+
 ## 2026-04-30 — Two new tutorials created
 
 No new sources ingested.

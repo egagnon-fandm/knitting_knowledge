@@ -1,6 +1,6 @@
 # Strain
 
-**Last updated**: 2026-04-29
+**Last updated**: 2026-04-30
 
 ---
 
@@ -24,21 +24,12 @@ $$\lambda = \frac{l}{L}$$
 
 Related to engineering strain by $e = \lambda - 1$. A stretch ratio of $\lambda = 2$ means the material doubled in length (100% engineering strain); $\lambda = 0.5$ means it compressed to half. Knitted fabrics routinely reach $\lambda = 2$–$3$ in normal use. At these strains, loops are unfolding geometrically; the yarn itself elongates only a few percent.
 
-## True (logarithmic) strain
-
-For sequential deformation steps — as in metal forming — **true strain** (logarithmic strain) is additive and therefore preferred:
-
-$$\varepsilon = \ln\!\left(\frac{l}{L}\right) = \ln\lambda = \ln(1 + e)$$
-
-Two successive true strains $\varepsilon_1$ and $\varepsilon_2$ give total true strain $\varepsilon_1 + \varepsilon_2$. Engineering strains are *not* additive in this sense.
-
 | Measure | Symbol | Formula | Best used when |
 |---|---|---|---|
 | Engineering strain | $e$ | $(l - L)/L$ | Small deformations ($e \ll 1$) |
 | Stretch ratio | $\lambda$ | $l/L$ | Large deformations; elastomers, fabrics |
-| True strain | $\varepsilon$ | $\ln(l/L)$ | Incremental forming; path-dependent processes |
 
-At small strains all three agree to first order: $\varepsilon \approx e \approx \lambda - 1$ for $|e| \ll 1$.
+At small strains both measures agree to first order: $e \approx \lambda - 1$ for $|e| \ll 1$.
 
 ## The strain tensor
 
@@ -46,11 +37,17 @@ In a 3D body, local deformation involves both stretching and shearing. For small
 
 $$s_{jj'} = \frac{1}{2}\!\left(\frac{\partial q_j}{\partial r_{j'}} + \frac{\partial q_{j'}}{\partial r_j}\right)$$
 
-- **Diagonal entries** ($s_{xx}$, $s_{yy}$, $s_{zz}$): fractional length change along each axis (normal strain).
-- **Off-diagonal entries** ($s_{xy}$, etc.): change in angle between originally perpendicular material lines (shear strain).
+**Index notation.** The indices $j$ and $j'$ each independently label one of the three spatial axes, $j, j' \in \{x, y, z\}$. The displacement field $\mathbf{q}(\mathbf{r})$ describes how each material point originally at position $\mathbf{r} = (r_x, r_y, r_z)$ moves; its component $q_j$ is the displacement in the $j$-direction. The full tensor is a $3\times 3$ matrix:
+
+$$\mathbf{s} = \begin{pmatrix} s_{xx} & s_{xy} & s_{xz} \\ s_{yx} & s_{yy} & s_{yz} \\ s_{zx} & s_{zy} & s_{zz} \end{pmatrix}$$
+
+Each entry $s_{jj'}$ captures how the displacement in the $j$-direction varies as you move in the $j'$-direction (averaged symmetrically with the $j \leftrightarrow j'$ swap).
+
+- **Diagonal entries** ($j = j'$, e.g. $s_{xx} = \partial q_x/\partial r_x$): fractional length change along each axis (normal strain). A positive $s_{xx}$ means the material is being stretched in $x$.
+- **Off-diagonal entries** ($j \neq j'$, e.g. $s_{xy} = \tfrac{1}{2}(\partial q_x/\partial r_y + \partial q_y/\partial r_x)$): change in angle between originally perpendicular material lines (shear strain). $s_{xy}$ measures how much lines along $x$ and $y$ tilt toward each other.
 - **Volume strain** (dilatation): $\Delta V / V = s_{xx} + s_{yy} + s_{zz} = \text{Tr}(\mathbf{s})$.
 
-Symmetry ($s_{jj'} = s_{j'j}$) leaves 6 independent components.
+The symmetrizing average in the definition ensures $s_{jj'} = s_{j'j}$, leaving only 6 independent components. The antisymmetric part of the displacement gradient (pure rigid rotation) is deliberately excluded — strain measures shape change only.
 
 ## Strain in knitted fabrics
 
@@ -78,9 +75,9 @@ where $c$ and $w$ are stitch dimensions in the course and wale directions, and $
 
 ## Example problems
 
-### Problem 1 — Three strain measures
+### Problem 1 — Two strain measures
 
-A yarn segment with rest length $L = 40$ mm is stretched to $l = 56$ mm. Compute: (a) engineering strain, (b) stretch ratio, (c) true strain.
+A yarn segment with rest length $L = 40$ mm is stretched to $l = 56$ mm. Compute: (a) engineering strain, (b) stretch ratio.
 
 **Solution:**
 
@@ -88,9 +85,7 @@ A yarn segment with rest length $L = 40$ mm is stretched to $l = 56$ mm. Compute
 
 (b) $\lambda = 56/40 = \mathbf{1.40}$
 
-(c) $\varepsilon = \ln(1.40) \approx \mathbf{0.336}$
-
-Note $\varepsilon < e$ for extension. For small deformations (say, $e = 0.01$) all three would agree to better than 1%. At $e = 0.40$ they differ by 16%, so the choice of measure matters.
+Check: $e = \lambda - 1 = 1.40 - 1 = 0.40$ ✓. For small deformations (say, $e = 0.01$) both measures agree to better than 1%, but at $e = 0.40$ they describe the same deformation in different scales — $e$ is the fractional change in length while $\lambda$ is the ratio of final to initial length.
 
 ---
 
