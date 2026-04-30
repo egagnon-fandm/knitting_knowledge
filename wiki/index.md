@@ -12,6 +12,7 @@ Knowledge base for research on knitted, woven, and crafted materials.
 - [Deformation](deformation.md) — elastic vs. plastic, affine/non-affine, displacement gradient tensor
 - [Poisson's ratio](poisson-ratio.md) — transverse-to-axial strain ratio; ~0.46 for stockinette
 - [Hooke's law](hookes-law.md) — linear elasticity; tensor form; limits for rubber/yarn (non-Hookean); neo-Hookean extensions
+- [Tangent modulus](tangent-modulus.md) — dσ/dε at a given strain; contrast with Young's modulus and secant modulus; diverges in strain-stiffening regime
 - [Work hardening](work-hardening.md) — yield-strength increase from plastic deformation; Hollomon's law; contrast with knitted fabric cycling
 
 ## Knitting fundamentals

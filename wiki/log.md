@@ -234,6 +234,38 @@ No new sources ingested. Lint audit found and fixed 13 issues across 19 files.
 
 ---
 
+## 2026-04-30 — Two new tutorials created
+
+No new sources ingested.
+
+**Tutorials created** (2):
+
+| File | Description |
+|---|---|
+| `tutorials/yarn-bending-energy.md` | Bending energy formula; bending rigidity $B = EI$; cantilever measurement; multi-filament softening; role in low-stress knit regime; 3 worked problems |
+| `tutorials/yarn-compression-energy.md` | Contact geometry at stitch crossings; Hertz contact model; two-regime fabric mechanics; capstan friction and its consequences (hysteresis, crackling, return point memory); 3 worked problems |
+
+---
+
+## 2026-04-29 — New concept page: tangent modulus
+
+No new sources ingested.
+
+**New page created** (1):
+
+| Page | Description |
+|---|---|
+| `tangent-modulus.md` | Concept: dσ/dε as a function of strain; contrast with Young's modulus and secant modulus; formula for the knitting constitutive model; divergence in strain-stiffening regime; hysteresis implications |
+
+**Pages updated** (2):
+
+| Page | Changes |
+|---|---|
+| `index.md` | Added tangent-modulus.md under Background mechanics |
+| `log.md` | This entry |
+
+---
+
 ## 2026-04-17 — Fourth ingest session
 
 **Sources ingested** (4 PDFs newly identified in `raw/`):

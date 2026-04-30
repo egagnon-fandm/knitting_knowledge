@@ -94,6 +94,7 @@ When the user asks you to update tutorials:
 - Check to see if the tutorials listed in Target Tutorial already exist in 'tutorials/'.
 - If it does not exist, create a new markdown document in 'tutorials/'.
 - Update the tutorials with information in 'wiki/'. If 'wiki/' does not have enough information, consult 'raw/'.
+- Discuss modifications to existing tutorials before implementing.
 - Tutorials are pitched to college-level students with general physics and mathematics background but no specific knowledge of the topic.
 - Tutorials should include 2-3 examples problems with worked-out solution in the document.
 - Tutorials should include a suggested list of further reading.
@@ -103,6 +104,8 @@ When the user asks you to update tutorials:
 - Stress
 - Strain
 - Stress-strain curves
+- Yarn bending energy
+- Yarn compression energy
 
 ### Tutorial format
 

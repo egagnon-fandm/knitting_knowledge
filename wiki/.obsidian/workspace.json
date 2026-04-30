@@ -1,19 +1,19 @@
 {
   "main": {
-    "id": "82cb924bcc66757b",
+    "id": "d94f9f9e2b6870de",
     "type": "split",
     "children": [
       {
-        "id": "f1c3c51e97a1081e",
+        "id": "91a66d349b9e2031",
         "type": "tabs",
         "children": [
           {
-            "id": "4b7fb312ff7e95a9",
+            "id": "c9c1d7e733f27f61",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wiki/yarn.md",
+                "file": "yarn.md",
                 "mode": "source",
                 "source": false
               },
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "29cd9e0293f3312a",
+    "id": "4037fe5f1f1913d0",
     "type": "split",
     "children": [
       {
-        "id": "8e105aaf7e87d8f0",
+        "id": "a7ffbced7db07b97",
         "type": "tabs",
         "children": [
           {
-            "id": "03fde11776e5e9fb",
+            "id": "8f7621cae079b4d4",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "0a78889bffbddc70",
+            "id": "f4c40178c7d35dde",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "e2aa29319f2fa329",
+            "id": "6db12c25dad47318",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -81,20 +81,20 @@
     "width": 300
   },
   "right": {
-    "id": "4eda12587661d8fa",
+    "id": "cfeec2828bb0588a",
     "type": "split",
     "children": [
       {
-        "id": "bdded6997d916f45",
+        "id": "1e58bf8120cdd1b2",
         "type": "tabs",
         "children": [
           {
-            "id": "8d38a20bffc946cd",
+            "id": "1a5ff906a6723299",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "wiki/strain.md",
+                "file": "yarn.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for strain"
+              "title": "Backlinks for yarn"
             }
           },
           {
-            "id": "3ea63ddd8aabf674",
+            "id": "60ca335eb43e587d",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "wiki/strain.md",
+                "file": "yarn.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from strain"
+              "title": "Outgoing links from yarn"
             }
           },
           {
-            "id": "7b39f9ae1aef9f90",
+            "id": "e1881c6e35a7f257",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,7 +137,7 @@
             }
           },
           {
-            "id": "41a6d2edcf77284e",
+            "id": "5f13c944dcfbdfb5",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -151,18 +151,18 @@
             }
           },
           {
-            "id": "fee142ae3351e002",
+            "id": "ac0f478ab3723bca",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "wiki/strain.md",
+                "file": "yarn.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of strain"
+              "title": "Outline of yarn"
             }
           }
         ]
@@ -183,43 +183,9 @@
       "bases:Create new base": false
     }
   },
-  "active": "4b7fb312ff7e95a9",
+  "active": "c9c1d7e733f27f61",
   "lastOpenFiles": [
-    "wiki/cornelissen-2009.md",
-    "wiki/yarn.md",
-    "raw/Cornelissen_Analysis_of_yarn_bending_behaviour_2009.pdf",
-    "wiki/index.md",
-    "wiki/stitch-types.md",
-    "wiki/knitted-fabrics.md",
-    "wiki/strain.md",
-    "Welcome.md",
-    "Machine_Learning.md",
-    "wiki/log.md.tmp.165893.1776712357708",
-    "wiki/index.md.tmp.165893.1776712348688",
-    "wiki/index.md.tmp.165893.1776712342975",
-    "wiki/landau-chap2.md.tmp.165893.1776712337084",
-    "wiki/yarn-simulation.md.tmp.165893.1776712332902",
-    "wiki/yarn-simulation.md.tmp.165893.1776712329047",
-    "wiki/yarn-simulation.md.tmp.165893.1776712322981",
-    "wiki/kirchhoff-rod.md",
-    "wiki/kirchhoff-rod.md.tmp.165893.1776712316697",
-    "wiki/coleman-1993.md",
-    "wiki/coleman-1993.md.tmp.165893.1776712286426",
-    "wiki/ding-2023.md",
-    "wiki/landau-chap2.md",
-    "wiki/witten-2007.md",
-    "wiki/kaldor-2008.md",
-    "wiki/yarn-contact.md",
-    "wiki/grandgeorge-2021.md",
-    "wiki/work-hardening.md",
-    "wiki/hookes-law.md",
-    "wiki/likharev-chap7.md",
-    "raw/Hooke_law.md",
-    "raw/Work_hardening.md",
-    "wiki/poincloux-prx-2018.md",
-    "wiki/stress-strain-curve.md",
-    "wiki/constitutive-model.md",
-    "wiki/physics-world-2019.md",
-    "wiki/jamshaid-mishra-2024.md"
+    "log.md.tmp.113925.1777553550854",
+    "index.md"
   ]
 }
