@@ -51,9 +51,17 @@ Knowledge base for research on knitted, woven, and crafted materials.
 - [Likharev Chapter 7](likharev-chap7.md) — continuum mechanics textbook; strain/stress tensors; tensor Hooke's law; rod bending/torsion; elastic waves
 - [Grandgeorge et al. 2021](grandgeorge-2021.md) — elastic orthogonal clasp; diamond contact region; friction capstan; yarn crossing mechanics
 - [Kaldor et al. 2008](kaldor-2008.md) — SIGGRAPH yarn-level simulation; B-spline tubes; ICD integrator; garter/stockinette/rib emergence
+- [Peirce 1947](peirce-1947.md) — cover factor analysis; geometric similarity principle; Poisson function $y=\sqrt{2-x^2}$; lattice strain theory
+- [Demiroz & Dias 2000](demiroz-2000.md) — 3D cubic spline stitch model; 5 control points (T,S,A,C,E); Newton-Raphson arc-length constraint; Gaussian quadrature
+- [Wadekar et al. 2020](wadekar-2020.md) — helicoid scaffold for yarn path geometry; energy minimization; validated for 7 weft-knit types
+- [Yuksel et al. 2012](yuksel-2012.md) — stitch mesh topology; k/p/y stitch actions; two-phase relaxation + B-spline yarn path pipeline
+- [Wakamatsu et al. 2024](wakamatsu-2024.md) — discrete quaternion rod model; two-ply yarn; elongational/flexural/torsional rigidities; micro-CT validation
 - [Witten 2007](witten-2007.md) — stress focusing in elastic sheets; d-cones; stretching ridges; Föppl–von Kármán equations
 - [Landau & Lifshitz Ch. II](landau-chap2.md) — equilibrium of rods and plates; biharmonic plate equation; Föppl–von Kármán large deflections; shell mechanics; rod bending/torsion rigidity; Euler buckling
 - [Coleman et al. 1993](coleman-1993.md) — Kirchhoff-Clebsch rod dynamics; 3D bending+torsion; conservation laws; solitary wave crease solution
 - [Antman Ch. 4](antman-chap4.md) — planar Cosserat rod theory; strain variables ν,η,μ; equilibrium equations; buckling phase portrait; Euler elastica
 - Landau & Lifshitz — Theory of Elasticity (`raw/Landau and Lifshitz - Theory of Elasticity.pdf`) — full text; Ch. II ingested; remaining chapters (I, III–IX) not yet ingested
+- Landau & Lifshitz — Theory of Elasticity (`raw/Landau and Lifshitz - Theory of Elasticity.pdf`) — full text; Ch. II ingested; remaining chapters (I, III–IX) not yet ingested
 - Antman — Nonlinear Problems of Elasticity (`raw/Nonlinear_Problems_of_Elasticity.pdf`) — full text; Ch. 4 §§1–2 ingested; remaining sections and chapters not yet ingested
+- Sitharam & Govindaraju 2021 — Theory of Elasticity (`raw/978-981-33-4650-5.pdf`) — standard civil engineering elasticity text; overlaps with Landau & Lifshitz and Likharev; ingested as reference only, no new wiki pages created
+- Midha et al. 2024 — Proceedings of the 50th Textile Research Symposium (`raw/Midha et al. - 2024 - Proceedings of the 50th Textile Research Symposium.pdf`) — Ch. 1 (Wakamatsu et al.) ingested; remaining chapters not ingested

@@ -2,9 +2,9 @@
 
 **Summary**: Yarn paths in knitted fabrics can be simulated using two complementary frameworks: (1) a static Bézier/energy-minimization approach (Dimitriyev 2019, Singal 2024) focused on unit-cell equilibria; and (2) a dynamic B-spline/Lagrangian approach (Ding et al. 2023) applied to full fabric assemblies. Both use Euler-Bernoulli bending energy and contact repulsion; they differ in extensibility assumption, dynamics, and scale.
 
-**Sources**: `raw/notes_for_Tim.pdf`, `raw/Singal_NatureComm_2024.pdf`, `raw/Unravelling the Mechanics of Knitted Fabrics Through.pdf`, `raw/Kaldor et al. - Simulating Knitted Cloth at the Yarn Level.pdf`, `raw/Coleman et al. - 1993 - On the dynamics of rods in the theory of Kirchhoff.pdf`
+**Sources**: `raw/notes_for_Tim.pdf`, `raw/Singal_NatureComm_2024.pdf`, `raw/Unravelling the Mechanics of Knitted Fabrics Through.pdf`, `raw/Kaldor et al. - Simulating Knitted Cloth at the Yarn Level.pdf`, `raw/Coleman et al. - 1993 - On the dynamics of rods in the theory of Kirchhoff.pdf`, `raw/Demiroz and Dias - 2000 - ...pdf`, `raw/Wadekar et al. - 2020 - Geometric modeling of knitted fabrics using helico.pdf`, `raw/Yuksel - Stitch Meshes for Modeling Knitted Clothing with Yarn-level Detail.pdf`, `raw/Midha et al. - 2024 - Proceedings of the 50th Textile Research Symposium.pdf` (Ch. 1)
 
-**Last updated**: 2026-04-17
+**Last updated**: 2026-05-04
 
 ---
 
@@ -115,22 +115,62 @@ Key result: garter, stockinette, and rib patterns emerge from yarn topology with
 
 Limitation: no explicit Coulomb friction — contact damping is an approximation; acknowledged as causing over-curling of stockinette edges. See [[kaldor-2008]] for full details.
 
+## Geometric stitch models (non-energy-minimizing)
+
+Three purely geometrical approaches construct stitch curves without minimizing a physical energy. They are useful for graphics rendering, pattern generation, and as initial configurations for mechanics simulations.
+
+### Demiroz & Dias 2000 — cubic spline with five control points
+
+Demiroz and Dias (J. Textile Institute 91(4):463–480, 2000) model the yarn centreline as a piecewise cubic spline with five named control points: **T** (top/head), **S** (shoulder), **A** (arch), **C** (crossover), **E** (end). The four segments TS, SA, AC, CE meet with C0/C1 continuity.
+
+The critical unknown is the upper-right distance $b$ (horizontal extent from loop axis to lateral extreme), solved by Newton-Raphson iteration until the total arc length of the spline equals the prescribed yarn length per stitch $\ell^*$. Arc length is evaluated by Gaussian quadrature. See [[demiroz-2000]] for full details.
+
+### Wadekar et al. 2020 — helicoid scaffold
+
+Wadekar et al. (J. Engineered Fibers and Fabrics 15:1–15, 2020) constrain the yarn path to lie on a helicoid surface:
+
+$$\mathbf{H}(r, \theta) = (r\cos\theta,\; r\sin\theta,\; c\theta)$$
+
+parameterised by three geometric constants: $R_y$ (yarn radius contribution), $R_h$ (helicoid radius), and $c$ (pitch). The optimal curve on the helicoid is found by minimising:
+
+$$E_\text{total}^i = \alpha E_\text{len}^i + \beta E_\text{dist}^i$$
+
+where $E_\text{len}^i$ penalises deviation from natural stitch length and $E_\text{dist}^i$ penalises departure from the scaffold surface. The model was validated for seven weft-knit types (plain, rib, interlock, purl, and variants). The helicoid naturally captures yarn twist at crossings — a feature flat planar models miss. See [[wadekar-2020]] for full details.
+
+### Yuksel et al. 2012 — stitch mesh + two-phase pipeline
+
+Yuksel et al. (ACM TOG 31(3), SIGGRAPH 2012) introduce the **stitch mesh**: a polygon mesh where each face encodes one stitch and face connectivity encodes the knit topology. Stitch actions are specified as sequences of three symbols: **k** (knit), **p** (purl), **y** (yarn-over). The pipeline has two phases:
+
+1. **Mesh relaxation**: the stitch mesh is simulated as a mass-spring system to find the rest shape of the garment.
+2. **Yarn path extraction**: cubic B-splines are fitted to the relaxed mesh skeleton, incorporating stitch action type and yarn length per loop.
+
+The stitch mesh is the design-intent representation; it can specify lace, cables, increases/decreases, and complex garment shaping that explicit template fitting (Kaldor 2008) cannot. See [[yuksel-2012]] for full details.
+
+### Wakamatsu et al. 2024 — discrete quaternion model for two-ply yarn
+
+Wakamatsu et al. (Midha proceedings Ch. 1, 2024) model yarn as a discrete chain of segments with orientations represented as unit quaternions. The potential energy has three terms — elongational $E_A$ (axial rigidity), flexural $E_I$ (bending rigidity), and torsional $E_{GJ}$ (twisting rigidity):
+
+$$E_\text{total} = E_A + E_I + E_{GJ}$$
+
+The model explicitly handles **two-ply yarn**: the composite torsional rigidity $GJ$ of two twisted plies is substantially higher than for a single ply, and this resists loop closure, producing larger, more rounded loop heads consistent with micro-CT measurements. See [[wakamatsu-2024]] for full details.
+
 ## Comparison of simulation frameworks
 
-| Feature | Kaldor 2008 | Bézier / energy-min. | B-spline / Lagrangian |
-|---|---|---|---|
-| Source | Kaldor, James, Marschner | Dimitriyev 2019, Singal 2024 | Ding et al. 2023 |
-| Curve type | Cubic B-spline | Cubic Bézier (degree-5) | Cubic B-spline |
-| Dynamics | Full (DAE/ICD) | Static minimisation | Full Lagrangian ODE |
-| Extensibility | Inextensible | Inextensible | Extensible |
-| Contact | Stiff penalty (diverging) | Hertz (Δ^{5/2}) | Quadratic spring |
-| Friction | Velocity filter (approx.) | None | Explicit k_{dt} |
-| Scale | Full garment | Unit cell | Full fabric |
-| Primary goal | Computer graphics | Physics/mechanics | Mechanics |
+| Feature | Kaldor 2008 | Bézier / energy-min. | B-spline / Lagrangian | Demiroz 2000 | Wadekar 2020 | Yuksel 2012 | Wakamatsu 2024 |
+|---|---|---|---|---|---|---|---|
+| Source | Kaldor et al. | Dimitriyev/Singal | Ding et al. 2023 | Demiroz & Dias | Wadekar et al. | Yuksel et al. | Wakamatsu et al. |
+| Curve type | Cubic B-spline | Cubic Bézier | Cubic B-spline | Cubic spline (5 CP) | Helicoid curve | Cubic B-spline | Discrete quaternion rod |
+| Dynamics | Full (DAE/ICD) | Static min. | Full (RK4) | None | None | Static (mass-spring) | Static min. |
+| Extensibility | Inextensible | Inextensible | Extensible | Inextensible | Not explicit | Not explicit | Extensible |
+| Contact | Stiff penalty | Hertz (Δ^{5/2}) | Quadratic spring | Diameter constraint | Surface constraint | Contact avoidance | Hard-core |
+| Twist | Not modelled | $B = J$ | Not modelled | Not modelled | Implicit (helicoid) | Not modelled | Explicit $GJ$ |
+| Ply structure | Single | Single | Single | Single | Not specified | Not specified | Two-ply |
+| Scale | Full garment | Unit cell | Full fabric | Unit cell | Unit cell | Full garment | Unit cell |
+| Primary goal | CG animation | Physics/mechanics | Mechanics | Graphics geometry | Pattern geometry | CG animation | Stitch shape |
 
-The B-spline framework (Ding) uses explicit RK4 with a precomputed banded mass matrix; the Bézier framework (Dimitriyev/Singal) uses scipy constrained optimization. Both reproduce J-shape stress-strain curves of the four canonical fabrics.
+The B-spline framework (Ding) uses explicit RK4 with a precomputed banded mass matrix; the Bézier framework (Dimitriyev/Singal) uses scipy constrained optimization. Both reproduce J-shape stress-strain curves of the four canonical fabrics. The geometric models (Demiroz, Wadekar, Yuksel, Wakamatsu) do not produce mechanical constitutive data but serve as geometry generators for rendering and as initial configurations for mechanics simulations.
 
-See [[ding-2023]], [[dimitriyev-notes-2019]], and [[kaldor-2008]] for full details of each framework.
+See [[ding-2023]], [[dimitriyev-notes-2019]], [[kaldor-2008]], [[demiroz-2000]], [[wadekar-2020]], [[yuksel-2012]], and [[wakamatsu-2024]] for full details.
 
 ## Related pages
 
@@ -147,3 +187,7 @@ See [[ding-2023]], [[dimitriyev-notes-2019]], and [[kaldor-2008]] for full detai
 - [[yarn-contact]]
 - [[kirchhoff-rod]]
 - [[coleman-1993]]
+- [[demiroz-2000]]
+- [[wadekar-2020]]
+- [[yuksel-2012]]
+- [[wakamatsu-2024]]

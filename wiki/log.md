@@ -302,6 +302,39 @@ No new sources ingested.
 
 ---
 
+## 2026-05-04 — Eighth ingest session (geometric stitch models)
+
+**Sources ingested** (5 documents):
+
+- `raw/Peirce - 1947 - Geometrical Principles Applicable to the Design of Functional Fabrics.pdf` — Textile Research Journal XVII(3):123–147; cover factor, geometric similarity, Poisson function
+- `raw/Demiroz and Dias - 2000 - ...pdf` — J. Textile Institute 91(4):463–480; piecewise cubic spline stitch model with 5 control points
+- `raw/Wadekar et al. - 2020 - Geometric modeling of knitted fabrics using helico.pdf` — J. Engineered Fibers and Fabrics 15:1–15; helicoid scaffold model
+- `raw/Yuksel - Stitch Meshes for Modeling Knitted Clothing with Yarn-level Detail.pdf` — ACM TOG 31(3), SIGGRAPH 2012; stitch mesh topology
+- `raw/Midha et al. - 2024 - Proceedings of the 50th Textile Research Symposium.pdf` — Ch. 1 only (Wakamatsu et al.); discrete quaternion two-ply yarn model
+
+**Not ingested (reference only)**:
+- `raw/978-981-33-4650-5.pdf` — Sitharam & Govindaraju, *Theory of Elasticity* (Springer 2021); standard civil engineering elasticity text; overlaps with Landau & Lifshitz and Likharev; no new conceptual content for knitting research
+
+**New pages created** (5):
+
+| Page | Description |
+|---|---|
+| `peirce-1947.md` | Source summary: cover factor $K=nd$; geometric similarity principle; Poisson function $y=\sqrt{2-x^2}$ from yarn-length conservation; lattice strain theory; crimp theory for woven fabrics |
+| `demiroz-2000.md` | Source summary: piecewise cubic spline with 5 control points T,S,A,C,E; Newton-Raphson on arc-length constraint for parameter $b$; Gaussian quadrature arc length |
+| `wadekar-2020.md` | Source summary: helicoid $\mathbf{H}(r,\theta)=(r\cos\theta, r\sin\theta, c\theta)$; energy minimization $E=\alpha E_{len}+\beta E_{dist}$; 3 parameters ($R_y, R_h, c$); validated for 7 weft-knit types |
+| `yuksel-2012.md` | Source summary: stitch mesh (face = stitch); k/p/y stitch actions; two-phase pipeline (mesh relax → B-spline yarn path) |
+| `wakamatsu-2024.md` | Source summary: discrete quaternion rod model; two-ply yarn; three energy terms $E_A + E_I + E_{GJ}$; validated against micro-CT measurements |
+
+**Pages updated** (3):
+
+| Page | Changes |
+|---|---|
+| `yarn-simulation.md` | Added sections on Demiroz cubic spline, Wadekar helicoid, Yuksel stitch mesh, Wakamatsu quaternion models; expanded comparison table to 8 frameworks; updated sources and related pages |
+| `wale-and-course.md` | Added "Peirce cover factors and geometric similarity" section: cover factor definition, geometric similarity principle, Poisson function $y=\sqrt{2-x^2}$, connection to the $\delta \approx 0.86$ yarn-conservation equation; added peirce-1947 to related pages |
+| `index.md` | Added peirce-1947, demiroz-2000, wadekar-2020, yuksel-2012, wakamatsu-2024 to source summaries; added Sitharam and Midha partial-ingest notes |
+
+---
+
 ## 2026-04-17 — Fourth ingest session
 
 **Sources ingested** (4 PDFs newly identified in `raw/`):

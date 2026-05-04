@@ -65,6 +65,28 @@ From industrial practice (source: Jamshaid & Mishra 2024):
 
 All fabric properties can be engineered by adjusting stitch length: longer stitch length → larger loops → more extensible, more porous, lower GSM; shorter stitch length → tighter fabric.
 
+## Peirce cover factors and geometric similarity
+
+The stitch dimensions $c$ and $w$ are equivalent to the **cover factors** introduced by F.T. Peirce (1947):
+
+$$K_c = n_c \cdot d = \frac{d}{c}, \qquad K_w = n_w \cdot d = \frac{d}{w}$$
+
+where $n_c = 1/c$ is the course density and $d$ is the yarn diameter. $K_c = 1$ means yarns are just touching in the course direction (maximum course cover).
+
+**Geometric similarity principle** (Peirce 1947): two fabrics with the same cover factors $K_c$ and $K_w$ but different yarn sizes are mechanically equivalent when stress and length are normalised by $B/d^3$ and $d$ respectively. This is why the normalised rigidity $\tilde{Y} = Y \cdot LA / B$ collapses to a single curve per stitch pattern across different yarn materials (source: Singal_NatureComm_2024.pdf).
+
+**Poisson function**: yarn-length conservation per stitch constrains the course and wale cover factors during deformation. Peirce showed that in normalised form they satisfy:
+
+$$x^2 + y^2 = 2, \qquad y = \sqrt{2 - x^2}$$
+
+where $x = K_c / K_{c0}$ and $y = K_w / K_{w0}$. This quarter-circle relationship predicts the transverse contraction of a knitted fabric from pure geometry, and is the geometric origin of the near-incompressibility of knitted fabrics (Poisson ratio $\nu \approx 0.46$; see [[poisson-ratio]]).
+
+The asymmetric version for real stockinette — where the loop aspect ratio $c/w \ne 1$ breaks the circular symmetry — is the yarn-conservation equation:
+
+$$\langle c \rangle + \delta \langle w \rangle = \ell^* = \text{const}, \qquad \delta \approx 0.86$$
+
+which is the experimentally measured form of Peirce's Poisson function (source: Poincloux_PRX_2018.pdf; see also [[peirce-1947]]).
+
 ## Related pages
 
 - [[knitted-fabrics]]
@@ -76,3 +98,4 @@ All fabric properties can be engineered by adjusting stitch length: longer stitc
 - [[poincloux-prx-2018]]
 - [[jamshaid-mishra-2024]]
 - [[dimitriyev-notes-2019]]
+- [[peirce-1947]]
