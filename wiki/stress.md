@@ -4,7 +4,7 @@
 
 **Sources**: `raw/Chap7.pdf` (Likharev), `raw/Landau and Lifshitz - Theory of Elasticity.pdf`, `raw/Singal_NatureComm_2024.pdf`
 
-**Last updated**: 2026-04-29
+**Last updated**: 2026-05-03
 
 ---
 
@@ -23,9 +23,16 @@ The stress tensor has two physically distinct contributions:
 - **Normal stress** $\sigma_{nn}$: force per area perpendicular to the surface. Positive = tension, negative = compression. Changes the volume of an element.
 - **Shear stress** $\sigma_{nt}$: force per area tangential to the surface. Distorts shape without changing volume.
 
-In a Cartesian frame:
-- Diagonal entries $\sigma_{xx}, \sigma_{yy}, \sigma_{zz}$: normal stresses along each axis
-- Off-diagonal entries $\sigma_{xy}, \sigma_{yz}, \sigma_{xz}$: shear stresses
+In a Cartesian frame, each entry $\sigma_{jj'}$ encodes two pieces of information:
+
+- The **second index $j'$** identifies the face being examined — the surface whose outward normal points in the $j'$-direction.
+- The **first index $j$** identifies the direction of the force per unit area acting on that face.
+
+$$\boldsymbol{\sigma} = \begin{pmatrix} \sigma_{xx} & \sigma_{xy} & \sigma_{xz} \\ \sigma_{xy} & \sigma_{yy} & \sigma_{yz} \\ \sigma_{xz} & \sigma_{yz} & \sigma_{zz} \end{pmatrix}$$
+
+**Same indices ($j = j'$, diagonal entries)**: the force is perpendicular to the face — pure tension ($> 0$) or compression ($< 0$) along that axis. The three diagonal entries $\sigma_{xx}, \sigma_{yy}, \sigma_{zz}$ describe independent stretching or squeezing along each axis.
+
+**Different indices ($j \neq j'$, off-diagonal entries)**: the force is parallel to the face — shear. $\sigma_{xy}$ is the $x$-force per unit area on the $y$-face. Symmetry $\sigma_{jj'} = \sigma_{j'j}$ holds because torque balance on any infinitesimal element requires the shear couple on opposite faces to cancel, leaving only 6 independent components.
 
 ## Cauchy stress tensor and equilibrium
 

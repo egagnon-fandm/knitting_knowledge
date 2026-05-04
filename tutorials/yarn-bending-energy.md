@@ -158,13 +158,3 @@ $$B_\text{free} = N \cdot E \cdot I_f = 200 \times 7.0 \times 10^{10} \times 4.9
 $$\frac{B_\text{bonded}}{B_\text{free}} = \frac{2.15 \times 10^{-4}}{6.87 \times 10^{-9}} \approx \mathbf{31{,}300}$$
 
 Perfect bonding makes the yarn $\sim$31,000× stiffer in bending than free sliding. Real multi-filament yarns fall between these extremes depending on inter-filament friction, which is why the effective $E^b$ must always be measured by cantilever test rather than computed from fibre modulus.
-
----
-
-## Further reading
-
-- Cornelissen, B. & Akkerman, R. (2009). "Analysis of yarn bending behaviour." University of Twente. — systematic cantilever tests on single-filament and multi-filament yarns; derives the EBT/TBT framework and explains inter-filament friction softening.
-- Ding, F. et al. (2023). "Yarn-level simulation of weft-knitted fabrics." *ACM Transactions on Graphics*. — uses the cantilever protocol to calibrate acrylic yarn at $E^b = 0.249$ MPa; formulates the bending energy integral used in B-spline simulation.
-- Singal, K. et al. (2024). "Programming mechanics in knitted materials, stitch by stitch." *Nature Communications* 15, 2622. — shows how bending modulus $B$ enters the normalised rigidity $\tilde{Y}$; demonstrates that topology, not fibre type, determines anisotropy.
-- Landau, L. D. & Lifshitz, E. M. — *Theory of Elasticity* (Course of Theoretical Physics, Vol. 7), §17–18. — rigorous derivation of the rod bending energy from continuum mechanics; bending and torsion rigidities for circular cross-sections.
-- Likharev, K. — *Essential Graduate Physics*, Ch. 7. [LibreTexts, CC BY-NC-SA] — accessible treatment of beam bending, the Euler-Bernoulli model, and elastic energy.

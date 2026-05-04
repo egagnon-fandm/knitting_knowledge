@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "yarn.md",
+                "file": "stress.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "yarn"
+              "title": "stress"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "yarn.md",
+                "file": "stress.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for yarn"
+              "title": "Backlinks for stress"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "yarn.md",
+                "file": "stress.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from yarn"
+              "title": "Outgoing links from stress"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "yarn.md",
+                "file": "stress.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of yarn"
+              "title": "Outline of stress"
             }
           }
         ]
@@ -185,8 +185,13 @@
   },
   "active": "c9c1d7e733f27f61",
   "lastOpenFiles": [
+    "stress.md.tmp.155869.1777821393416",
+    "log.md.tmp.155869.1777821334269",
+    "stress.md.tmp.155869.1777821321655",
+    "stress.md.tmp.155869.1777821313365",
+    "index.md",
+    "yarn.md",
     "log.md.tmp.118550.1777559635791",
-    "log.md.tmp.113925.1777553550854",
-    "index.md"
+    "log.md.tmp.113925.1777553550854"
   ]
 }

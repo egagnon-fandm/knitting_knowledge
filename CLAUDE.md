@@ -97,7 +97,6 @@ When the user asks you to update tutorials:
 - Discuss modifications to existing tutorials before implementing.
 - Tutorials are pitched to college-level students with general physics and mathematics background but no specific knowledge of the topic.
 - Tutorials should include 2-3 examples problems with worked-out solution in the document.
-- Tutorials should include a suggested list of further reading.
 
 ### Target Tutorials
 
@@ -121,8 +120,6 @@ Each tutorial should have the following format:
 Main content goes here. Use clear headings and short paragraphs.
 
 ## Example problems
-
-## Further reading
 ```
 
 ## Rules

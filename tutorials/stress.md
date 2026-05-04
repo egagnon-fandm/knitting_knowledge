@@ -33,22 +33,20 @@ At any point inside a 3D body, the stress state depends on which plane you exami
 
 $$\boldsymbol{\sigma} = \begin{pmatrix} \sigma_{xx} & \sigma_{xy} & \sigma_{xz} \\ \sigma_{xy} & \sigma_{yy} & \sigma_{yz} \\ \sigma_{xz} & \sigma_{yz} & \sigma_{zz} \end{pmatrix}$$
 
-- **Diagonal entries** ($\sigma_{xx}$, $\sigma_{yy}$, $\sigma_{zz}$): normal stresses along each axis.
-- **Off-diagonal entries** ($\sigma_{xy}$, etc.): shear stresses on each face.
+**Reading the indices.** Each entry $\sigma_{jj'}$ carries two pieces of information encoded in its two indices:
+
+- The **second index $j'$** identifies the plane being examined: the surface whose outward normal points in the $j'$-direction. For example, $j' = x$ refers to the face of an infinitesimal cube that faces in the $x$-direction.
+- The **first index $j$** identifies the direction of the force (per unit area) acting on that face.
+
+**Same indices ($j = j'$, diagonal entries — normal stress).** When both indices are the same, the force is *perpendicular* to the face. $\sigma_{xx}$ is the $x$-force per unit area on the $x$-face: a pure push or pull along $x$. Positive = tension (faces being pulled apart); negative = compression (faces being squeezed). These three entries, $\sigma_{xx}$, $\sigma_{yy}$, $\sigma_{zz}$, describe how the material is being stretched or compressed along each axis independently.
+
+**Different indices ($j \neq j'$, off-diagonal entries — shear stress).** When the indices differ, the force is *parallel* to the face rather than perpendicular to it. $\sigma_{xy}$ is the $x$-force per unit area on the $y$-face: the face is being slid in the $x$-direction. This sliding distorts the shape of the element (turning a cube into a parallelogram) without changing its volume. Symmetry ($\sigma_{jj'} = \sigma_{j'j}$) means $\sigma_{xy}$ and $\sigma_{yx}$ are equal, so sliding the $y$-face in $x$ produces the same stress as sliding the $x$-face in $y$ — a consequence of torque balance on the element.
 
 The traction (force per area) on a surface with outward unit normal $\hat{n}$ is:
 
 $$\mathbf{t} = \boldsymbol{\sigma} \cdot \hat{n}$$
 
 Symmetry ($\sigma_{ij} = \sigma_{ji}$) follows from the requirement that no infinitesimal element experiences a net torque, leaving 6 independent components.
-
-## Stress equilibrium
-
-For a body in static equilibrium with no body forces, stresses must satisfy:
-
-$$\sum_{j'} \frac{\partial \sigma_{jj'}}{\partial r_{j'}} = 0 \quad \text{for each } j$$
-
-This equilibrium equation, derived from Newton's second law applied to every infinitesimal element, strongly constrains which stress distributions are physically admissible.
 
 ## Yield stress
 
@@ -118,12 +116,3 @@ $$\tau = \sqrt{|\mathbf{t}|^2 - \sigma_n^2} = \sigma_0 \cos\theta \sin\theta = \
 Maximum shear stress occurs at $\theta = 45°$: $\tau_\text{max} = \sigma_0/2$.
 
 This is why ductile metals fail along 45° slip planes — and why crackling avalanches in knitted fabrics propagate preferentially along ±45° diagonals of the stitch lattice.
-
----
-
-## Further reading
-
-- Likharev, K. — *Essential Graduate Physics*, Ch. 7 §§7.1–7.3. [LibreTexts, CC BY-NC-SA] — accessible introduction to the stress tensor, Hooke's law, and equilibrium.
-- Landau, L. D. & Lifshitz, E. M. — *Theory of Elasticity* (Course of Theoretical Physics, Vol. 7), Ch. I. — rigorous graduate treatment of 3D stress and strain.
-- Singal, K. et al. (2024). "Programming mechanics in knitted materials, stitch by stitch." *Nature Communications* 15, 2622. — explains how stress is defined and measured in knitted fabric experiments.
-- Poincloux, S. (2019). "Knit and stretch." *Physics World*, January 2019. — accessible overview connecting fabric stress to loop geometry.

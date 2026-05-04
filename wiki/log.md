@@ -278,6 +278,18 @@ No new sources ingested.
 
 ---
 
+## 2026-05-03 — stress.md wiki page updated
+
+No new sources ingested.
+
+**Pages updated** (1):
+
+| Page | Changes |
+|---|---|
+| `wiki/stress.md` | Expanded "Normal and shear stress" section with explicit explanation of the two tensor indices: second index $j'$ identifies the face (surface normal direction), first index $j$ identifies the force direction; same-index entries are normal stress, different-index entries are shear stress; added torque-balance argument for symmetry $\sigma_{jj'} = \sigma_{j'j}$ |
+
+---
+
 ## 2026-04-17 — Fourth ingest session
 
 **Sources ingested** (4 PDFs newly identified in `raw/`):

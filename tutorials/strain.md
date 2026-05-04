@@ -37,7 +37,11 @@ In a 3D body, local deformation involves both stretching and shearing. For small
 
 $$s_{jj'} = \frac{1}{2}\!\left(\frac{\partial q_j}{\partial r_{j'}} + \frac{\partial q_{j'}}{\partial r_j}\right)$$
 
-**Index notation.** The indices $j$ and $j'$ each independently label one of the three spatial axes, $j, j' \in \{x, y, z\}$. The displacement field $\mathbf{q}(\mathbf{r})$ describes how each material point originally at position $\mathbf{r} = (r_x, r_y, r_z)$ moves; its component $q_j$ is the displacement in the $j$-direction. The full tensor is a $3\times 3$ matrix:
+**Index notation.** The indices $j$ and $j'$ each independently label one of the three spatial axes, $j, j' \in \{x, y, z\}$. The displacement field $\mathbf{q}(\mathbf{r})$ describes how each material point originally at position $\mathbf{r} = (r_x, r_y, r_z)$ moves; its component $q_j$ is the displacement in the $j$-direction.
+
+**Physical meaning of $\partial q_j / \partial r_{j'}$.** This derivative asks: as you step a small distance $dr_{j'}$ in the $j'$-direction through the undeformed material, how much does the displacement in the $j$-direction change? Concretely, take two neighboring material points separated by $dr_{j'}$ in the $j'$-direction. After deformation, they are no longer separated by exactly $dr_{j'}$: one has shifted in the $j$-direction by $dq_j = (\partial q_j/\partial r_{j'})\,dr_{j'}$ more than the other. When $j = j'$ this is a fractional elongation along one axis (the same idea as engineering strain). When $j \neq j'$ it measures how much a material fiber originally pointing in the $j'$-direction has tilted toward the $j$-direction — a shear-like tilt. The raw gradient $\partial q_j/\partial r_{j'}$ mixes genuine shape change with rigid-body rotation; the symmetrizing average in $s_{jj'}$ keeps only the shape change and discards the rotation.
+
+The full tensor is a $3\times 3$ matrix:
 
 $$\mathbf{s} = \begin{pmatrix} s_{xx} & s_{xy} & s_{xz} \\ s_{yx} & s_{yy} & s_{yz} \\ s_{zx} & s_{zy} & s_{zz} \end{pmatrix}$$
 
@@ -121,12 +125,3 @@ Applying conservation ($c + \delta w = \ell^*$):
 $$c = 5.719 - 0.86 \times 2.60 = 5.719 - 2.236 = \mathbf{3.48 \text{ mm}}$$
 
 The course dimension shrank from 3.93 mm to 3.48 mm as the wale dimension grew from 2.08 mm to 2.60 mm — the fabric narrowed while being stretched in height, exactly as expected from a positive Poisson ratio.
-
----
-
-## Further reading
-
-- Likharev, K. — *Essential Graduate Physics*, Ch. 7 §7.1. [LibreTexts, CC BY-NC-SA] — systematic introduction to the strain tensor for 3D continua.
-- Landau, L. D. & Lifshitz, E. M. — *Theory of Elasticity* (Vol. 7), Ch. I. — rigorous development of finite strain theory.
-- Poincloux, S., Adda-Bedia, M., & Lechenault, F. (2018). "Geometry and elasticity of a knitted fabric." *Physical Review X* 8, 021075. — derives the yarn-length conservation constraint and Poisson ratio of stockinette from first principles.
-- Singal, K. et al. (2024). "Programming mechanics in knitted materials, stitch by stitch." *Nature Communications* 15, 2622. — measures strain in the course and wale directions for four knit fabrics across eight yarn types.

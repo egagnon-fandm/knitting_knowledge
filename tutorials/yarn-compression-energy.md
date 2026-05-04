@@ -137,13 +137,3 @@ $$T_\text{out} = \frac{T_1}{e^{\mu\varphi}} = \frac{14.4 \text{ mN}}{1.44} = \ma
 The process at this single contact is reversible: the same 10 mN enters and 10 mN leaves, but the *path* is different. During loading the contact amplifies (10 → 14.4 mN); during unloading it attenuates (14.4 → 10 mN). The fabric must supply more tension during loading than unloading to achieve the same geometric deformation.
 
 (c) Each contact contributes a factor $K = e^{\mu\varphi} = 1.44$ asymmetry. Many contacts act in series and parallel across the fabric. The effective loading stiffness exceeds the unloading stiffness approximately by a factor related to $K$. For stockinette nylon, experiments give loading stiffness $\tilde{Y}^\uparrow \approx 5\times$ unloading stiffness $\tilde{Y}^\downarrow$, consistent with multiple friction contacts each contributing a factor $K \gtrsim 1$.
-
----
-
-## Further reading
-
-- Grandgeorge, P. et al. (2021). "Mechanics of two filaments in tight orthogonal contact." *Proceedings of the National Academy of Sciences* 118, e2021684118. — experimental and theoretical study of the orthogonal clasp; identifies the diamond contact region and measures friction ($\mu = 0.32$).
-- Singal, K. et al. (2024). "Programming mechanics in knitted materials, stitch by stitch." *Nature Communications* 15, 2622. — calibrates contact potential from yarn compression experiments; derives the two-regime constitutive model and shows the crossover from bending to compression dominance.
-- Dresselhaus, E. J. et al. (2025). "Return point memory in knitted fabrics." arXiv:2512.02132. — explains how yarn contacts act as hysterons; builds the Preisach model for cyclic stress-strain hysteresis and return point memory.
-- Poincloux, S., Adda-Bedia, M., & Lechenault, F. (2018). "Geometry and elasticity of a knitted fabric." *Physical Review X* 8, 021075. — measures the ~5× difference between loading and unloading stiffness and traces it to yarn contact friction.
-- Dimitriyev, M. S. (2019). Fabric simulation notes. — describes the Hertz sphere-contact potential $V_\text{int} = (M/5)\sum |\Delta_{ij}|^{5/2}$ used in the Singal group simulation framework.

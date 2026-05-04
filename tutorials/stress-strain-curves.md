@@ -20,15 +20,6 @@ The key quantities readable from the curve:
 | **Fracture strain** $\varepsilon_f$ | Strain at break |
 | **Toughness** | Area under the full curve: $\int_0^{\varepsilon_f} \sigma\, d\varepsilon$ (energy per unit volume or unit width) |
 
-## Curve for a ductile metal (steel)
-
-A ductile metal such as mild steel shows four stages:
-
-1. **Linear elastic**: $\sigma = E\varepsilon$; the material returns to its original shape upon unloading. For steel, $E \approx 200$ GPa.
-2. **Yield point**: plastic deformation begins at $\sigma_y$. Some steels show a sharp upper/lower yield; others transition gradually.
-3. **Strain hardening**: continued deformation increases yield strength as dislocations accumulate. Described empirically by $\sigma = K\varepsilon_p^n$ (Hollomon's law), where $n \in [0.2, 0.5]$.
-4. **Necking and fracture**: cross-section localises; engineering stress drops even as true stress increases until fracture.
-
 ## J-shaped curve: elastomers and knitted fabrics
 
 Rubber, biological tissue, and knitted fabrics all produce a qualitatively different curve: **J-shaped** (convex upward, also called strain-stiffening).
@@ -131,13 +122,3 @@ $$T_2 = \frac{\sigma_\text{start} + \sigma_\text{end}}{2} \times \Delta\varepsil
 $$T = T_1 + T_2 = 24 + 48 = \mathbf{72 \text{ J/m}}$$
 
 Note: because fabric stress is in N/m (not Pa), toughness has units of J/m (energy per unit width), not J/m³. To convert to volumetric toughness one would need to divide by the fabric thickness, which is typically 1–3 mm.
-
----
-
-## Further reading
-
-- Likharev, K. — *Essential Graduate Physics*, Ch. 7. [LibreTexts, CC BY-NC-SA] — covers Young's modulus, Hooke's law, rod bending, and elastic energy from a physics perspective.
-- Singal, K. et al. (2024). "Programming mechanics in knitted materials, stitch by stitch." *Nature Communications* 15, 2622. — full experimental and simulation study of J-shaped curves for stockinette, garter, rib, and seed; introduces the two-term constitutive model.
-- Poincloux, S., Adda-Bedia, M., & Lechenault, F. (2018). "Geometry and elasticity of a knitted fabric." *Physical Review X* 8, 021075. — derives the stockinette constitutive relation from first principles; explains hysteresis between loading and unloading moduli.
-- Dresselhaus, E. J. et al. (2025). "Return point memory in knitted fabrics." arXiv:2512.02132. — systematic study of hysteresis and memory in cyclic stress-strain curves; Preisach model.
-- Jamshaid, H. & Mishra, R. (Eds.). (2024). *Knitting Science, Technology, Process and Materials*. Springer. — Ch. 5 covers the mechanics of jersey, rib, and interlock fabrics from an industrial perspective.
