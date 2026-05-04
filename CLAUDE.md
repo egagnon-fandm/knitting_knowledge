@@ -105,6 +105,7 @@ When the user asks you to update tutorials:
 - Stress-strain curves
 - Yarn bending energy
 - Yarn compression energy
+- Knitted fabric
 
 ### Tutorial format
 

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wiki/yarn.md",
+                "file": "wiki/knitted-fabrics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "yarn"
+              "title": "knitted-fabrics"
             }
           }
         ]
@@ -185,10 +185,21 @@
   },
   "active": "4b7fb312ff7e95a9",
   "lastOpenFiles": [
-    "wiki/cornelissen-2009.md",
-    "wiki/yarn.md",
-    "raw/Cornelissen_Analysis_of_yarn_bending_behaviour_2009.pdf",
+    "tutorials/knitted-fabric.md.tmp.231950.1777905899659",
+    "wiki/log.md.tmp.231950.1777905594620",
+    "tutorials/knitted-fabric.md",
+    "tutorials/knitted-fabric.md.tmp.231950.1777905578928",
+    "CLAUDE.md~",
+    "wiki/stitch-topology.md",
+    "wiki/wale-and-course.md",
+    "wiki/ding-2023.md",
+    "wiki/poisson-ratio.md",
+    "wiki/knit-elasticity.md",
+    "wiki/hookes-law.md",
     "wiki/index.md",
+    "wiki/yarn.md",
+    "wiki/cornelissen-2009.md",
+    "raw/Cornelissen_Analysis_of_yarn_bending_behaviour_2009.pdf",
     "wiki/stitch-types.md",
     "wiki/knitted-fabrics.md",
     "wiki/strain.md",
@@ -200,26 +211,15 @@
     "wiki/landau-chap2.md.tmp.165893.1776712337084",
     "wiki/yarn-simulation.md.tmp.165893.1776712332902",
     "wiki/yarn-simulation.md.tmp.165893.1776712329047",
-    "wiki/yarn-simulation.md.tmp.165893.1776712322981",
     "wiki/kirchhoff-rod.md",
-    "wiki/kirchhoff-rod.md.tmp.165893.1776712316697",
     "wiki/coleman-1993.md",
-    "wiki/coleman-1993.md.tmp.165893.1776712286426",
-    "wiki/ding-2023.md",
     "wiki/landau-chap2.md",
     "wiki/witten-2007.md",
     "wiki/kaldor-2008.md",
     "wiki/yarn-contact.md",
     "wiki/grandgeorge-2021.md",
     "wiki/work-hardening.md",
-    "wiki/hookes-law.md",
     "wiki/likharev-chap7.md",
-    "raw/Hooke_law.md",
-    "raw/Work_hardening.md",
-    "wiki/poincloux-prx-2018.md",
-    "wiki/stress-strain-curve.md",
-    "wiki/constitutive-model.md",
-    "wiki/physics-world-2019.md",
-    "wiki/jamshaid-mishra-2024.md"
+    "raw/Hooke_law.md"
   ]
 }

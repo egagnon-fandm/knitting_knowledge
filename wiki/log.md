@@ -290,6 +290,18 @@ No new sources ingested.
 
 ---
 
+## 2026-05-04 — Knitted fabric tutorial created
+
+No new sources ingested.
+
+**Tutorial created** (1):
+
+| File | Description |
+|---|---|
+| `tutorials/knitted-fabric.md` | Introduction to knitted fabrics: weft knitting vs. weaving; K/P stitches; wale and course directions; four canonical patterns; even/odd segment mechanics; extensibility, anisotropy, J-shaped curve, hysteresis, Poisson ratio, yarn-length conservation; applications; 3 worked problems |
+
+---
+
 ## 2026-04-17 — Fourth ingest session
 
 **Sources ingested** (4 PDFs newly identified in `raw/`):
