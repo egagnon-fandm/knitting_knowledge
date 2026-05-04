@@ -36,26 +36,6 @@ A yarn with large $B$ requires a large moment to curve — it is stiff in bendin
 
 **Typical values**: For nylon monofilament (diameter 150 μm, $E \approx 3$ GPa), $B \approx 7 \times 10^{-8}$ N·m². For soft multi-filament acrylic knitting yarn, the effective $B$ is typically several orders of magnitude smaller.
 
-## Measurement: the cantilever test
-
-The bending rigidity of yarn cannot be reliably calculated from fibre properties alone (see §Multi-filament softening). Instead, it is measured directly. The **cantilever test** is the standard protocol:
-
-1. Clamp one end of a yarn segment horizontally; let the free end droop under gravity.
-2. Photograph the deflected shape.
-3. Measure the horizontal span $\lambda$ from the clamp to the point directly above the free tip, and the vertical deflection $\delta$.
-
-For a cantilever under uniformly distributed gravity load $q = \pi(d/2)^2 \rho_\text{yarn} g$ (N/m), Euler-Bernoulli beam theory gives the tip deflection:
-
-$$\delta = \frac{q\lambda^4}{8B}$$
-
-Solving for the apparent bending modulus $E^b = B/I$:
-
-$$E^b = \frac{q\lambda^4}{8\delta I}$$
-
-This protocol is used by Cornelissen & Akkerman (2009) and by Ding et al. (2023), who report $E^b = 0.249$ MPa for acrylic knitting yarn.
-
-A note on beam theories: Euler-Bernoulli theory (EBT) assumes plane cross-sections remain plane and neglects shear deformation. The Timoshenko beam theory (TBT) adds a shear term $\delta_\text{shear} = qL^2/(2GA_s)$, but for typical yarn geometries (length $\gg$ diameter) the shear correction is negligible and EBT is accurate.
-
 ## Multi-filament softening
 
 Most knitting yarns are not single solid cylinders — they are composed of hundreds or thousands of fine filaments twisted together. This dramatically reduces the effective bending rigidity compared to a solid rod of the same outer diameter.
@@ -71,7 +51,7 @@ The ratio between these extremes is:
 
 $$\frac{B_\text{bonded}}{B_\text{free}} = \frac{I_\text{composite}}{N I_f} = \frac{R^4}{N r_f^4}$$
 
-For typical yarn with $R/r_f \sim 10$–$50$ and $N \sim 100$–$1000$, this ratio can reach $10^3$–$10^4$. Real yarns fall between the two limits depending on inter-filament friction. At low curvature, static friction locks filaments together (stiffer); at higher curvature they progressively unlock and slide (softer). This nonlinear, history-dependent bending behaviour means $E^b$ must be measured as an effective parameter, not calculated.
+For typical yarn with $R/r_f \sim 10$–$50$ and $N \sim 100$–$1000$, this ratio can reach $10^3$–$10^4$. Real yarns fall between the two limits depending on inter-filament friction. At low curvature, static friction locks filaments together (stiffer); at higher curvature they progressively unlock and slide (softer). This nonlinear, history-dependent bending behaviour means $E^b$ must be measured as an effective parameter rather than derived from fibre properties alone.
 
 ## Bending energy and knit elasticity
 
@@ -113,32 +93,7 @@ This is the bending energy in a single curved yarn segment — comparable in sca
 
 ---
 
-### Problem 2 — Cantilever measurement of bending modulus
-
-A yarn of diameter $d = 0.5$ mm and density $\rho_\text{yarn} = 1200$ kg/m³ is clamped horizontally. With a free span of $\lambda = 60$ mm, it sags by $\delta = 8.0$ mm under gravity. Find the bending modulus $E^b$.
-
-**Solution:**
-
-Second moment of area:
-$$I = \frac{\pi d^4}{64} = \frac{\pi (5.0 \times 10^{-4})^4}{64} = 3.07 \times 10^{-15} \text{ m}^4$$
-
-Gravity load per unit length:
-$$q = \pi\!\left(\frac{d}{2}\right)^2 \rho_\text{yarn} g = \pi \times (2.5 \times 10^{-4})^2 \times 1200 \times 9.81 = 2.31 \times 10^{-3} \text{ N/m}$$
-
-Applying the cantilever formula:
-$$E^b = \frac{q\lambda^4}{8\delta I} = \frac{2.31 \times 10^{-3} \times (0.060)^4}{8 \times 0.0080 \times 3.07 \times 10^{-15}}$$
-
-Numerator: $2.31 \times 10^{-3} \times 1.296 \times 10^{-5} = 2.99 \times 10^{-8}$ N·m³
-
-Denominator: $8 \times 0.0080 \times 3.07 \times 10^{-15} = 1.96 \times 10^{-16}$ m⁵
-
-$$E^b = \frac{2.99 \times 10^{-8}}{1.96 \times 10^{-16}} = \mathbf{1.53 \times 10^8 \text{ Pa} = 153 \text{ MPa}}$$
-
-This is a plausible modulus for a stiff monofilament or a tightly spun yarn with high inter-filament friction. Soft multi-filament spun yarns typically give $E^b \sim 0.1$–$1$ MPa when measured by this method.
-
----
-
-### Problem 3 — Multi-filament softening
+### Problem 2 — Multi-filament softening
 
 A composite yarn consists of $N = 200$ glass filaments, each of diameter $d_f = 10$ μm and Young's modulus $E = 70$ GPa. The composite yarn has outer diameter $D = 0.5$ mm.
 
@@ -157,4 +112,43 @@ $$B_\text{free} = N \cdot E \cdot I_f = 200 \times 7.0 \times 10^{10} \times 4.9
 **Ratio:**
 $$\frac{B_\text{bonded}}{B_\text{free}} = \frac{2.15 \times 10^{-4}}{6.87 \times 10^{-9}} \approx \mathbf{31{,}300}$$
 
-Perfect bonding makes the yarn $\sim$31,000× stiffer in bending than free sliding. Real multi-filament yarns fall between these extremes depending on inter-filament friction, which is why the effective $E^b$ must always be measured by cantilever test rather than computed from fibre modulus.
+Perfect bonding makes the yarn $\sim$31,000× stiffer in bending than free sliding. Real multi-filament yarns fall between these extremes depending on inter-filament friction, which is why the effective $E^b$ must always be measured experimentally rather than computed from fibre modulus.
+
+---
+
+### Problem 3 — Diameter scaling and bending moment
+
+A knitter is choosing between two nylon monofilament yarns of the same material ($E = 4.0$ GPa) but different diameters: Yarn A has $d_A = 0.2$ mm and Yarn B has $d_B = 0.4$ mm.
+
+(a) Calculate the bending rigidity $B$ for each yarn.
+
+(b) By what factor does $B$ increase from Yarn A to Yarn B? Confirm this using the diameter ratio alone.
+
+(c) When forming a stitch, each yarn is bent to a radius of curvature of $\rho = 2.0$ mm. What bending moment $M$ must the knitter's needles exert on each yarn?
+
+**Solution:**
+
+**(a) Bending rigidity of each yarn:**
+
+For Yarn A ($d_A = 2.0 \times 10^{-4}$ m):
+$$I_A = \frac{\pi d_A^4}{64} = \frac{\pi (2.0 \times 10^{-4})^4}{64} = \frac{\pi \times 1.6 \times 10^{-15}}{64} = 7.85 \times 10^{-17} \text{ m}^4$$
+$$B_A = E \cdot I_A = 4.0 \times 10^{9} \times 7.85 \times 10^{-17} = \mathbf{3.14 \times 10^{-7} \text{ N·m}^2}$$
+
+For Yarn B ($d_B = 4.0 \times 10^{-4}$ m):
+$$I_B = \frac{\pi d_B^4}{64} = \frac{\pi (4.0 \times 10^{-4})^4}{64} = \frac{\pi \times 2.56 \times 10^{-14}}{64} = 1.257 \times 10^{-15} \text{ m}^4$$
+$$B_B = E \cdot I_B = 4.0 \times 10^{9} \times 1.257 \times 10^{-15} = \mathbf{5.03 \times 10^{-6} \text{ N·m}^2}$$
+
+**(b) Diameter scaling:**
+
+$$\frac{B_B}{B_A} = \frac{5.03 \times 10^{-6}}{3.14 \times 10^{-7}} \approx 16$$
+
+This follows directly from $B \propto d^4$. Doubling the diameter increases bending rigidity by $2^4 = 16$, regardless of material. A yarn that is twice as thick requires sixteen times more moment to bend to the same curvature.
+
+**(c) Bending moment at stitch curvature:**
+
+The stitch radius $\rho = 2.0$ mm gives curvature $\kappa = 1/\rho = 500$ m$^{-1}$. Using $M = B\kappa$:
+
+$$M_A = B_A \kappa = 3.14 \times 10^{-7} \times 500 = \mathbf{1.57 \times 10^{-4} \text{ N·m}}$$
+$$M_B = B_B \kappa = 5.03 \times 10^{-6} \times 500 = \mathbf{2.51 \times 10^{-3} \text{ N·m}}$$
+
+Yarn B requires 16 times more moment — a factor that grows rapidly with diameter. This is why thick yarns feel stiff and springy on the needles, and why hand-knitters tend to use larger needles (longer lever arm) with heavier yarns.

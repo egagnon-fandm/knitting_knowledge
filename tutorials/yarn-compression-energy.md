@@ -20,7 +20,11 @@ In practice, simulation models approximate the contact with analytically tractab
 | Quadratic spring | $\propto \delta^2$ | Ding et al. 2023 |
 | Full orthogonal clasp (FEM) | Numerically computed | Grandgeorge et al. 2021 |
 
-where $\delta$ is the overlap distance: $\delta = 2R - |\mathbf{r}_1 - \mathbf{r}_2|$ when two yarn centrelines of radius $R$ are closer than their combined radii.
+where the variables are:
+
+- $R$ — the yarn radius (each yarn is modelled as a cylinder or chain of spheres of radius $R$; both yarns are assumed to have the same radius)
+- $\mathbf{r}_1$, $\mathbf{r}_2$ — position vectors of the centrelines of the two contacting yarn segments at the crossing point
+- $\delta = 2R - |\mathbf{r}_1 - \mathbf{r}_2|$ — the overlap distance; $\delta > 0$ when the centreline separation is less than two radii, meaning the yarns are in contact and being compressed
 
 ## The Hertz contact model
 
