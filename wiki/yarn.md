@@ -2,9 +2,9 @@
 
 **Summary**: Yarn is a hierarchical 1D material (short staple fibers spun into a continuous strand) whose dominant mechanical contributions to fabric behavior are bending stiffness and compressibility; extensional rigidity and torsion play negligible roles in normal fabric deformation.
 
-**Sources**: `raw/Singal_NatureComm_2024.pdf`, `raw/notes_for_Tim.pdf`, `raw/Poincloux_PRX_2018.pdf`, `raw/Cornelissen_Analysis_of_yarn_bending_behaviour_2009.pdf`, `raw/Unravelling the Mechanics of Knitted Fabrics Through.pdf`
+**Sources**: `raw/Singal_NatureComm_2024.pdf`, `raw/notes_for_Tim.pdf`, `raw/Poincloux_PRX_2018.pdf`, `raw/Cornelissen_Analysis_of_yarn_bending_behaviour_2009.pdf`, `raw/Unravelling the Mechanics of Knitted Fabrics Through.pdf`, `raw/Chen_2025_Multilevel_Mechanical_Modeling_Weft_Knit.pdf`, `raw/Pillay - 1963 - ...pdf`, `raw/Xiong et al. - 2026 - ...pdf`, `raw/Htike et al. - 2016 - ...pdf`
 
-**Last updated**: 2026-04-16
+**Last updated**: 2026-05-18
 
 ---
 
@@ -67,6 +67,50 @@ Multiple yarn materials have been tested, showing that **stitch pattern, not fib
 | Wool/acrylic/cashmere blend | 14-18 WPI (glove prototype) |
 | Nylon monofilament 150 μm | model system (Poincloux) |
 
+## Transverse anisotropy
+
+Cotton and nylon yarns are **transversely isotropic**: their transverse (radial) compressive stiffness is orders of magnitude lower than their longitudinal tensile stiffness. This arises from the loosely bound fiber bundle structure — fibers reconfigure laterally under compression while resisting elongation more strongly. PET monofilament, being a single extruded fiber, behaves as isotropic.
+
+Experimental distinction (source: Chen_2025_Multilevel_Mechanical_Modeling_Weft_Knit.pdf §2): the **free-standing diameter $d_0$** (at rest) is measurably larger than the **post-knit diameter $d_k$** (in fabric). This difference reflects the compressive pre-stress imposed during knitting by yarn-yarn contact forces at crossings. For accurate FEA, compression tests must be performed on yarns pre-tensioned to $d_k$.
+
+## Tensile modulus: twist angle and friction
+
+For cotton ring-spun yarn, the tensile modulus depends primarily on **twist angle** and **inter-fiber friction coefficient**, not yarn diameter (source: Xiong et al. 2026, [[xiong-2026]]):
+
+- Tensile modulus **decreases** with twist angle; the drop is sharp above ~29°.
+- Friction coefficient $\mu_f \approx 0.5$ gives the best experimental match (< 2% error in FE simulations).
+- At high twist, friction reaches a "mutual locking" plateau — further increase in $\mu_f$ beyond ~0.4 produces diminishing returns.
+
+The modified rule-of-mixtures captures this coupling:
+
+$$E'_y = \cos^2\!\theta \cdot (1 + \mu_f\sin^2\theta) \cdot V_f E_f$$
+
+where $E_f$ is the fiber longitudinal modulus, $V_f$ is fiber volume fraction, and $\theta$ is the surface twist angle. This outperforms the classical $E_y = \cos^2\!\theta \cdot V_f E_f$ (source: Xiong et al. 2026).
+
+## Wet properties (cotton)
+
+Wetting a cotton yarn increases its tensile strength, elongation, and stiffness (source: Pillay 1963, [[pillay-1963]]):
+
+| Property | Average change on wetting | Dependence on twist |
+|---|---|---|
+| Breaking strength | +22% to +55% | Larger gain at low TM |
+| Breaking elongation | +7% to +15% | Smaller gain at high TM |
+| Stiffness (modulus) | +15% to +38% | Larger gain at low TM |
+
+The mechanism is increased inter-fiber friction from fiber swelling — not intrinsic fiber strengthening. Wetting also shifts the optimal twist multiplier for maximum strength from ~5.0 (dry) to ~4.5 (wet), because swelling partially untwists the yarn. These effects are specific to staple (short-fiber) cotton; monofilament PET is unaffected by wetting within clothing-use strains (source: Chen_2025_Multilevel_Mechanical_Modeling_Weft_Knit.pdf §3).
+
+## High-twist regime: humidity increases extensibility
+
+At very high twist factors (K > 7,000, twist angles >40°), the moisture response reverses character relative to normal-twist yarns (source: Htike et al. 2016, [[htike-2016]]):
+
+- **Extensibility (EM-1) increases with RH** for all yarns. Higher twist amplifies the effect.
+- **Resilience decreases with RH** — at 90% RH, roughly 50% of the first-cycle extension becomes permanent residual strain.
+- **Twist ratio controls extensibility ratio**: for yarns of equal count, $\text{EM-1}(Y_2)/\text{EM-1}(Y_1) = E_1/E_2 \approx 3.08$ (constant at 40–90% RH), where $E$ is the longitudinal modulus. Higher twist lowers $E$, increasing extensibility at fixed load.
+- **Snarling** occurs at very high humidity (>70% RH) for the most twisted yarns: over-twist torque relaxes by forming local coils, further increasing extensibility. Snarled sections have locally higher twist angles.
+- **First-cycle hysteresis** is much larger than subsequent cycles — the same cycling-induced softening observed at the fabric level in [[return-point-memory]] and [[crackling-dynamics]] has its origin partly at the yarn level.
+
+The weft-direction extensibility of plain-woven crepe fabric made from high-twist weft yarn reaches 16–26%, placing it in the same range as outer-knitted fabrics. This confirms that high twist is a structural mechanism for achieving knit-like compliance in a woven structure.
+
 ## Non-Hookean behavior
 
 Yarn is a soft fibrous material and behaves similarly to rubber: its mechanical response is **non-Hookean** — stress is not linearly proportional to strain, and the response depends on loading history and rate. This means that standard continuum mechanics moduli (Young's modulus, shear modulus) cannot be directly applied to yarn as they would to steel or glass. Instead, yarn bending stiffness (B) and contact compressibility are measured empirically and used as inputs to fabric-level models. See [[hookes-law]] for discussion of the limits of linear elasticity for soft materials.
@@ -81,3 +125,7 @@ Yarn is a soft fibrous material and behaves similarly to rubber: its mechanical 
 - [[cornelissen-2009]]
 - [[ding-2023]]
 - [[jamshaid-mishra-2024]]
+- [[du-pasquier-2025]]
+- [[pillay-1963]]
+- [[xiong-2026]]
+- [[htike-2016]]

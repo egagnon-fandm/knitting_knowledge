@@ -31,6 +31,10 @@ Knowledge base for research on knitted, woven, and crafted materials.
 - [Return point memory](return-point-memory.md) — RPM under cyclic loading; rate-independent hysteresis; Preisach model; yarn contacts as hysterons
 - [Yarn contact mechanics](yarn-contact.md) — orthogonal clasp geometry; diamond contact region; friction capstan; physical basis of hysterons
 
+## Constitutive models
+
+- [HGO strain energy](hgo-strain-energy.md) — Holzapfel-Gasser-Ogden model for weft knits; 3-parameter hyperelastic; I₄ couples course/wale stretches; fits in minutes
+
 ## Simulation methods
 
 - [Yarn simulation](yarn-simulation.md) — Bézier, B-spline, and yarn-level frameworks; comparison table; Kaldor/Dimitriyev/Ding
@@ -60,6 +64,11 @@ Knowledge base for research on knitted, woven, and crafted materials.
 - [Landau & Lifshitz Ch. II](landau-chap2.md) — equilibrium of rods and plates; biharmonic plate equation; Föppl–von Kármán large deflections; shell mechanics; rod bending/torsion rigidity; Euler buckling
 - [Coleman et al. 1993](coleman-1993.md) — Kirchhoff-Clebsch rod dynamics; 3D bending+torsion; conservation laws; solitary wave crease solution
 - [Antman Ch. 4](antman-chap4.md) — planar Cosserat rod theory; strain variables ν,η,μ; equilibrium equations; buckling phase portrait; Euler elastica
+- [Crane 2023](crane-2023.md) — parametric plain-knit yarn centerline γ(t)=(t+a·sin2t, h·cost, d·cos2t); fiber strand model; arc length; used by du Pasquier 2025 FEA
+- [du Pasquier et al. 2025](du-pasquier-2025.md) — multi-level framework: yarn characterization → volumetric FEA → HGO surrogate (3 params); heterogeneous fabrics; compression sleeve
+- [Pillay 1963](pillay-1963.md) — cotton fiber bundles and yarns dry vs. wet; wetting increases strength (+22–55%), elongation, stiffness; optimal TM shifts 5.0→4.5
+- [Htike et al. 2016](htike-2016.md) — high-twist cotton yarns (K > 7,000) at 10–90% RH; humidity increases extensibility and decreases resilience; crepe fabric weft extensibility 16–26% = knitted fabric range
+- [Xiong et al. 2026](xiong-2026.md) — FE simulation of ring-spun yarn; tensile modulus decreases with twist angle; friction μ=0.5; modified rule-of-mixtures with friction correction
 - Landau & Lifshitz — Theory of Elasticity (`raw/Landau and Lifshitz - Theory of Elasticity.pdf`) — full text; Ch. II ingested; remaining chapters (I, III–IX) not yet ingested
 - Landau & Lifshitz — Theory of Elasticity (`raw/Landau and Lifshitz - Theory of Elasticity.pdf`) — full text; Ch. II ingested; remaining chapters (I, III–IX) not yet ingested
 - Antman — Nonlinear Problems of Elasticity (`raw/Nonlinear_Problems_of_Elasticity.pdf`) — full text; Ch. 4 §§1–2 ingested; remaining sections and chapters not yet ingested

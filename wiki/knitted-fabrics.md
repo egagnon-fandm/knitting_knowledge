@@ -4,7 +4,7 @@
 
 **Sources**: `raw/Singal_NatureComm_2024.pdf`, `raw/Poincloux_PRX_2018.pdf`, `raw/Poincloux_PRL_2018.pdf`, `raw/Dresselhaus et al. - 2025 - Return point memory in knitted fabrics.pdf`, `raw/notes_for_Tim.pdf`, `raw/Knitting Science, Technology, Process and Materials.pdf`, `raw/Knit and stretch – Physics World.pdf`
 
-**Last updated**: 2026-04-13
+**Last updated**: 2026-05-17
 
 ---
 
@@ -58,6 +58,15 @@ The connectivity (topology) of the stitch network is locked: stitches cannot exc
 
 Fabrics knitted on industrial machines (V-bed, circular) are produced under tension. When the fabric is taken off the machine, it relaxes and adopts a reference state that depends on manufacturing tension. This **residual pre-tension** affects the reference geometry and must be accounted for in simulation (source: Ding et al. 2023, [[ding-2023]]). Experimentally, fabrics are typically left 24–48 hours to relax before mechanical testing (source: Jamshaid & Mishra 2024).
 
+## Heterogeneous fabrics
+
+Industrial garments routinely combine regions of different yarn or stitch pattern (e.g., to vary stiffness across a compression sleeve). Du Pasquier et al. 2025 showed that **material transitions obey simple mechanical analogies** (source: Chen_2025_Multilevel_Mechanical_Modeling_Weft_Knit.pdf §4):
+
+- **Parallel configuration** (interface parallel to load): overall response = weighted average of the two homogeneous regions. The interface does not introduce additional compliance.
+- **Series configuration** (interface perpendicular to load): each region deforms according to its own homogeneous behavior; the interface displacement is tracked by DIC.
+
+This means a heterogeneous garment can be modeled as a patchwork of homogeneous HGO elements joined by spring-in-series/parallel constraints — no mesoscale interface model is needed. Demonstrated by optimizing a compression sleeve to deliver spatially uniform pressure across a variable-circumference arm (see [[du-pasquier-2025]]).
+
 ## Related pages
 
 - [[stitch-types]]
@@ -73,3 +82,5 @@ Fabrics knitted on industrial machines (V-bed, circular) are produced under tens
 - [[physics-world-2019]]
 - [[ding-2023]]
 - [[dresselhaus-2025]]
+- [[du-pasquier-2025]]
+- [[hgo-strain-energy]]

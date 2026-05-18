@@ -335,6 +335,41 @@ No new sources ingested.
 
 ---
 
+## 2026-05-17 — Ninth ingest session
+
+**Sources ingested** (4 new + 2 previously unlogged):
+
+- `raw/YarnCurve.pdf` (Crane 2023 — parametric plain-knit yarn model; wiki page `crane-2023.md` had been created 2026-05-15 but not logged)
+- `raw/Chen_2025_Multilevel_Mechanical_Modeling_Weft_Knit.pdf` (du Pasquier, Jeong et al. 2025 — multi-level FEA/HGO framework; wiki page `hgo-strain-energy.md` had been created 2026-05-15 but not logged)
+- `raw/Pillay - 1963 - ...pdf` (Pillay 1963 — cotton fiber bundle/yarn tensile properties, dry vs. wet)
+- `raw/Xiong et al. - 2026 - ...pdf` (Xiong et al. 2026 — FE simulation of ring-spun yarn; twist angle and friction)
+
+**Duplicate identified**:
+- `raw/Chen_2023_Unravelling_Mechanics_Knitted_Fabrics.pdf` = same paper as the already-ingested `raw/Unravelling the Mechanics of Knitted Fabrics Through.pdf` (Ding, Sanchez, Bertoldi, Rycroft 2023/2024). Different filename from citation manager error. No new pages created.
+
+**New pages created** (5):
+
+| Page | Description |
+|---|---|
+| `crane-2023.md` | Source summary (backfilled): parametric plain-knit yarn centerline; fiber strand model; arc length; Bishop frame approximation |
+| `hgo-strain-energy.md` | Concept (backfilled): HGO strain energy model; 3-parameter hyperelastic; I₄ invariant; fitting procedure; validation |
+| `du-pasquier-2025.md` | Source summary: multi-level framework (yarn characterization → volumetric FEA → HGO surrogate); heterogeneous fabrics; compression sleeve |
+| `pillay-1963.md` | Source summary: cotton fiber/yarn tensile properties dry vs. wet; +22–55% strength on wetting; optimal TM shift 5.0→4.5 |
+| `xiong-2026.md` | Source summary: FE simulation of ring-spun yarn; tensile modulus decreases with twist angle; μ_f=0.5; modified rule-of-mixtures |
+
+**Pages updated** (6):
+
+| Page | Changes |
+|---|---|
+| `yarn.md` | Added transverse anisotropy section (du Pasquier: cotton/nylon transversely isotropic, d₀ vs d_k distinction); tensile modulus section (Xiong: twist angle and friction); wet properties section (Pillay: +22–55% strength, +7–15% elongation, optimal TM shift) |
+| `constitutive-model.md` | Added HGO strain energy model section; links to hgo-strain-energy and du-pasquier-2025 |
+| `knitted-fabrics.md` | Added heterogeneous fabrics section (du Pasquier: springs in parallel/series, no interface correction needed) |
+| `yarn-simulation.md` | Added du Pasquier volumetric FEA section; expanded comparison table from 7 to 8 frameworks |
+| `index.md` | Added new Constitutive models section with hgo-strain-energy; added crane-2023, du-pasquier-2025, pillay-1963, xiong-2026 to source summaries |
+| `log.md` | This entry |
+
+---
+
 ## 2026-04-17 — Fourth ingest session
 
 **Sources ingested** (4 PDFs newly identified in `raw/`):
@@ -362,3 +397,34 @@ No new sources ingested.
 | `crackling-dynamics.md` | Added orthogonal clasp identification of stick-slip mechanism; links to yarn-contact and grandgeorge-2021 |
 | `index.md` | Added yarn-contact (mechanics section), kaldor-2008, grandgeorge-2021, witten-2007, L&L reference |
 | `log.md` | This entry |
+
+---
+
+## 2026-05-18 — Tenth ingest session
+
+**Sources ingested** (1 new):
+
+- `raw/Htike et al. - 2016 - Tensile property of highly twisted cotton yarns under varied relative humidity.pdf` — Htike, Kang & Sukigara 2016, *IJCST* 28(4):390–399. Cyclic tensile tests on four highly twisted cotton yarns (K = 3,847–9,411) across 10–90% RH and water; chijimi crepe fabric extensibility measurement.
+
+**Duplicates identified (no new pages)**:
+
+- `raw/Chen_2023_Unravelling_Mechanics_Knitted_Fabrics.pdf` = Ding et al. arXiv:2307.12360**v3** (Jun 2024) — updated preprint of already-ingested v2. Minor textual edits; physics unchanged. Source field in `ding-2023.md` updated.
+- `raw/Unravelling the Mechanics of Knitted Fabrics Through.pdf` = same paper, v2 (Oct 2023) — already the source of `ding-2023.md`.
+- `raw/YarnCurve.pdf` = Crane 2023 — already source of `crane-2023.md`.
+- `raw/notes_for_Tim.pdf` = Dimitriyev 2019 — already source of `dimitriyev-notes-2019.md`.
+- `raw/Chen_2025_Multilevel_Mechanical_Modeling_Weft_Knit.pdf` = du Pasquier et al. 2025 (last author Tian Chen) — already source of `du-pasquier-2025.md`.
+
+**New pages created** (1):
+
+| Page | Description |
+|---|---|
+| `htike-2016.md` | Source summary: four high-twist cotton yarns at 10–90% RH; humidity raises extensibility and lowers resilience; at 90% RH ~50% of extension is residual strain; crepe fabric weft extensibility 16–26% ≈ knitted fabric range |
+
+**Pages updated** (4):
+
+| Page | Changes |
+|---|---|
+| `yarn.md` | Added "High-twist regime: humidity increases extensibility" section (Htike 2016: EM-1/RH relationship, resilience decay, snarling mechanism, first-cycle hysteresis); added htike-2016 to sources and related pages |
+| `pillay-1963.md` | Added "Follow-on: Htike et al. 2016" section comparing twist-factor regimes; added htike-2016 to related pages |
+| `ding-2023.md` | Updated sources field to note v3 (Jun 2024) exists alongside ingested v2 |
+| `index.md` | Added htike-2016 under source summaries |

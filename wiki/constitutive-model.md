@@ -78,6 +78,21 @@ does **not** apply directly to knitted fabrics because:
 
 The fabric constitutive model is therefore a **structural** (not material) relation derived from the topology and geometry of the stitch network. See [[stitch-topology]] and [[knit-elasticity]].
 
+## HGO strain energy model (du Pasquier et al. 2025)
+
+A compact alternative to the Singal 2024 model is the **Holzapfel-Gasser-Ogden (HGO)** strain energy formulation, which captures both fabric directions with only **3 parameters** and is thermodynamically consistent (hyperelastic):
+
+$$\psi = \frac{a}{b}\!\left[\exp\!\left(b(I_4-1)^2\right) - 1\right], \quad I_4 = \lambda_1^2\cos^2\theta + \lambda_2^2\sin^2\theta$$
+
+where $\lambda_1$ = course stretch, $\lambda_2$ = wale stretch, $\theta$ = anisotropy direction, $a$ = initial stiffness scale, $b$ = exponential stiffening rate. The stress (first Piola-Kirchhoff) follows from $\mathbf{P} = \partial\psi/\partial\mathbf{F}$.
+
+Empirical rules for parameter interpretation (source: Chen_2025_Multilevel_Mechanical_Modeling_Weft_Knit.pdf):
+- **Stitch length** primarily sets $b$: shorter stitches → denser fabric → larger $b$.
+- **Pattern** primarily sets $\theta$: Rib/Seed alter anisotropy significantly; Jersey ≈ 45° (near-isotropic biaxially).
+- **Yarn material** scales both $a$ and $b$ by up to an order of magnitude but barely affects $\theta$.
+
+The HGO model is already implemented in ABAQUS and is better suited for garment-scale FEA workflows than the Singal model. See [[du-pasquier-2025]] and [[hgo-strain-energy]] for derivation and validation.
+
 ## Related pages
 
 - [[knit-elasticity]]
@@ -93,3 +108,5 @@ The fabric constitutive model is therefore a **structural** (not material) relat
 - [[cosserat-rod]]
 - [[kirchhoff-rod]]
 - [[antman-chap4]]
+- [[hgo-strain-energy]]
+- [[du-pasquier-2025]]

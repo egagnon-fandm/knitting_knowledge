@@ -154,23 +154,38 @@ $$E_\text{total} = E_A + E_I + E_{GJ}$$
 
 The model explicitly handles **two-ply yarn**: the composite torsional rigidity $GJ$ of two twisted plies is substantially higher than for a single ply, and this resists loop closure, producing larger, more rounded loop heads consistent with micro-CT measurements. See [[wakamatsu-2024]] for full details.
 
+## du Pasquier et al. 2025 — volumetric FEA
+
+Du Pasquier et al. 2025 introduce a **volumetric solid-element FEA** of the stitch rather than a 1D rod model. Each yarn is meshed as a 3D solid extruded along the Crane 2023 centerline (see [[crane-2023]]):
+
+- **Unit cell**: 2×2 stitches (2 course × 2 wale); periodic boundary conditions match node/edge pairs.
+- **Elements**: quadratic tetrahedral C3D10 with seed size R/3; captures radial deformation and contact over the full yarn cross-section.
+- **Material**: cotton/nylon modeled as transversely isotropic (experimental data fed directly); PET as isotropic.
+- **Pre-stress step**: thermal expansion inflates yarn from initial undersize to measured post-knit diameter $d_k$, establishing in-fabric contact state before any external loading.
+- **Loading**: biaxial equibiaxial stretching in course and wale directions; validated against custom biaxial stage with DIC.
+- **Validation**: NRMSE < 5% across most stitch lengths, patterns, and yarn materials.
+
+This approach is the highest-fidelity framework in the comparison table: it resolves yarn cross-section deformation and can capture inter-yarn friction and contact area. However, it requires tens of hours of compute per configuration, which motivates the HGO surrogate model (see [[du-pasquier-2025]] and [[hgo-strain-energy]]).
+
+See also [[crane-2023]] for the parametric centerline used to define the stitch geometry in this model.
+
 ## Comparison of simulation frameworks
 
-| Feature | Kaldor 2008 | Bézier / energy-min. | B-spline / Lagrangian | Demiroz 2000 | Wadekar 2020 | Yuksel 2012 | Wakamatsu 2024 |
-|---|---|---|---|---|---|---|---|
-| Source | Kaldor et al. | Dimitriyev/Singal | Ding et al. 2023 | Demiroz & Dias | Wadekar et al. | Yuksel et al. | Wakamatsu et al. |
-| Curve type | Cubic B-spline | Cubic Bézier | Cubic B-spline | Cubic spline (5 CP) | Helicoid curve | Cubic B-spline | Discrete quaternion rod |
-| Dynamics | Full (DAE/ICD) | Static min. | Full (RK4) | None | None | Static (mass-spring) | Static min. |
-| Extensibility | Inextensible | Inextensible | Extensible | Inextensible | Not explicit | Not explicit | Extensible |
-| Contact | Stiff penalty | Hertz (Δ^{5/2}) | Quadratic spring | Diameter constraint | Surface constraint | Contact avoidance | Hard-core |
-| Twist | Not modelled | $B = J$ | Not modelled | Not modelled | Implicit (helicoid) | Not modelled | Explicit $GJ$ |
-| Ply structure | Single | Single | Single | Single | Not specified | Not specified | Two-ply |
-| Scale | Full garment | Unit cell | Full fabric | Unit cell | Unit cell | Full garment | Unit cell |
-| Primary goal | CG animation | Physics/mechanics | Mechanics | Graphics geometry | Pattern geometry | CG animation | Stitch shape |
+| Feature | Kaldor 2008 | Bézier / energy-min. | B-spline / Lagrangian | du Pasquier 2025 | Demiroz 2000 | Wadekar 2020 | Yuksel 2012 | Wakamatsu 2024 |
+|---|---|---|---|---|---|---|---|---|
+| Source | Kaldor et al. | Dimitriyev/Singal | Ding et al. 2023 | du Pasquier et al. | Demiroz & Dias | Wadekar et al. | Yuksel et al. | Wakamatsu et al. |
+| Curve type | Cubic B-spline | Cubic Bézier | Cubic B-spline | 3D solid (C3D10) | Cubic spline (5 CP) | Helicoid curve | Cubic B-spline | Discrete quaternion rod |
+| Dynamics | Full (DAE/ICD) | Static min. | Full (RK4) | Static (ABAQUS) | None | None | Static (mass-spring) | Static min. |
+| Extensibility | Inextensible | Inextensible | Extensible | Extensible | Inextensible | Not explicit | Not explicit | Extensible |
+| Contact | Stiff penalty | Hertz (Δ^{5/2}) | Quadratic spring | Full contact/friction | Diameter constraint | Surface constraint | Contact avoidance | Hard-core |
+| Cross-section | 1D rod | 1D rod | 1D rod | Full 3D solid | 1D rod | 1D rod | 1D rod | 1D rod |
+| Yarn anisotropy | None | None | None | Transv. isotropic | None | None | None | None |
+| Scale | Full garment | Unit cell | Full fabric | 2×2 unit cell | Unit cell | Unit cell | Full garment | Unit cell |
+| Primary goal | CG animation | Physics/mechanics | Mechanics | Physics/design | Graphics geometry | Pattern geometry | CG animation | Stitch shape |
 
-The B-spline framework (Ding) uses explicit RK4 with a precomputed banded mass matrix; the Bézier framework (Dimitriyev/Singal) uses scipy constrained optimization. Both reproduce J-shape stress-strain curves of the four canonical fabrics. The geometric models (Demiroz, Wadekar, Yuksel, Wakamatsu) do not produce mechanical constitutive data but serve as geometry generators for rendering and as initial configurations for mechanics simulations.
+The B-spline framework (Ding) uses explicit RK4 with a precomputed banded mass matrix; the Bézier framework (Dimitriyev/Singal) uses scipy constrained optimization. The du Pasquier volumetric FEA is the highest-fidelity approach but requires tens of hours per configuration. The geometric models (Demiroz, Wadekar, Yuksel, Wakamatsu) do not produce mechanical constitutive data but serve as geometry generators for rendering and as initial configurations for mechanics simulations.
 
-See [[ding-2023]], [[dimitriyev-notes-2019]], [[kaldor-2008]], [[demiroz-2000]], [[wadekar-2020]], [[yuksel-2012]], and [[wakamatsu-2024]] for full details.
+See [[ding-2023]], [[dimitriyev-notes-2019]], [[kaldor-2008]], [[du-pasquier-2025]], [[demiroz-2000]], [[wadekar-2020]], [[yuksel-2012]], and [[wakamatsu-2024]] for full details.
 
 ## Related pages
 
@@ -191,3 +206,5 @@ See [[ding-2023]], [[dimitriyev-notes-2019]], [[kaldor-2008]], [[demiroz-2000]],
 - [[wadekar-2020]]
 - [[yuksel-2012]]
 - [[wakamatsu-2024]]
+- [[du-pasquier-2025]]
+- [[crane-2023]]
